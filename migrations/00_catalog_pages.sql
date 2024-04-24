@@ -1,0 +1,20 @@
+CREATE TABLE `catalog_pages` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `caption` varchar(255) NOT NULL,
+  `layout` varchar(255) NOT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  `catalog_page_id` bigint(20) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `icon_id` int(11) NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `visible` tinyint(1) NOT NULL,
+  `header_image` varchar(255) NOT NULL,
+  `teaser_image` varchar(255) NOT NULL,
+  `special_image` varchar(255) NOT NULL,
+  `primary_text` text DEFAULT NULL,
+  `secondary_text` text DEFAULT NULL,
+  `details_text` text DEFAULT NULL,
+  `teaser_text` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

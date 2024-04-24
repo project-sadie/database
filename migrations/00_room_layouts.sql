@@ -4,7 +4,6 @@ CREATE TABLE `room_layouts` (
   `heightmap` text NOT NULL,
   `door_x` int(11) NOT NULL,
   `door_y` int(11) NOT NULL,
-  `door_z` double NOT NULL,
   `door_direction` int(11) NOT NULL,
   `requires_club_membership` tinyint(1) NOT NULL DEFAULT 0,
   `extra_data` text DEFAULT NULL,

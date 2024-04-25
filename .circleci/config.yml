@@ -1,0 +1,56 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.5.0
+jobs:
+  sqlfluff-lint: 
+    docker:
+      - image: cimg/python:3.10.2
+    steps:
+      - checkout
+      - run: pip install sqlfluff
+      - run: 
+          name: SQL Fluff Lint Check
+          command: sqlfluff lint
+  migrate-seed:
+    docker:
+      - image: cimg/base:2022.10
+      - image: cimg/mariadb:10.6
+        environment:
+          MYSQL_ROOT_PASSWORD: secret
+    steps:
+      - checkout
+      - run: 
+          command: dockerize -wait tcp://localhost:3306 -timeout 1m
+      - run:
+          name: Setting Up
+          command: |
+            dockerize -wait tcp://localhost:3306 -timeout 1m
+            mkdir -p output
+            awk '{print}' ./migrations/*.sql > "output/migrate.sql"
+            awk '{print}' ./seeders/*.sql > "output/seed.sql"
+            sudo apt-get update
+            sudo apt-get install -y mysql-client
+      - run: 
+          name: Create Database
+          command: mysql -h 127.0.0.1 -u root -psecret --execute="CREATE DATABASE sadie CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+      - run:
+          name: Run Migrations
+          command: mysql -h 127.0.0.1 -u root -psecret sadie < output/migrate.sql
+      - run:
+          name: Run Seeders
+          command: mysql -h 127.0.0.1 -u root -psecret sadie < output/seed.sql
+  check-table-name-length:
+    docker:
+      - image: cimg/python:3.10.2
+    steps:
+      - checkout
+      - run: 
+          name: CheckTableNameLengths
+          command: python tests/checkTableNameLengths.py
+workflows:
+  database:
+    jobs:
+      - sqlfluff-lint
+      - migrate-seed
+      - check-table-name-length

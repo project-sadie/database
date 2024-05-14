@@ -1,4 +1,4 @@
-INSERT INTO `furniture_item_hand_items` (`id`, `furniture_item_id`, `hand_item_id`) VALUES (4,127,1),
+INSERT INTO `furniture_item_hand_item` (`id`, `furniture_item_id`, `hand_item_id`) VALUES (4,127,1),
 (3,127,2),
 (2,127,5),
 (1,127,6),

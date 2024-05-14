@@ -3,5 +3,6 @@ CREATE TABLE `server_room_constants` (
   `seconds_till_user_idle` int(11) NOT NULL DEFAULT 300,
   `max_name_length` int(11) NOT NULL DEFAULT 60,
   `max_description_length` int(11) NOT NULL DEFAULT 250,
-  `max_tag_length` int(11) NOT NULL DEFAULT 30
+  `max_tag_length` int(11) NOT NULL DEFAULT 30,
+  `created_at` timestamp NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

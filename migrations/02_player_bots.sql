@@ -12,5 +12,5 @@ CREATE TABLE `player_bots` (
   KEY `player_bots_room_id_foreign` (`room_id`),
   KEY `player_bots_player_id_room_id_index` (`player_id`,`room_id`),
   CONSTRAINT `player_bots_player_id_foreign` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`),
-  CONSTRAINT `player_bots_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `roles` (`id`)
+  CONSTRAINT `player_bots_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

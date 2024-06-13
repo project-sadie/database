@@ -6,5 +6,5 @@ CREATE TABLE `room_paint_settings` (
   `landscape_paint` varchar(255) NOT NULL DEFAULT '0.0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `room_paint_settings_room_id_unique` (`room_id`),
-  CONSTRAINT `room_paint_settings_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`)
+  CONSTRAINT `room_paint_settings_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

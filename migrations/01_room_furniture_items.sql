@@ -18,5 +18,5 @@ CREATE TABLE `room_furniture_items` (
   KEY `room_furniture_items_furniture_item_id_foreign` (`furniture_item_id`),
   CONSTRAINT `room_furniture_items_furniture_item_id_foreign` FOREIGN KEY (`furniture_item_id`) REFERENCES `furniture_items` (`id`),
   CONSTRAINT `room_furniture_items_owner_id_foreign` FOREIGN KEY (`owner_id`) REFERENCES `players` (`id`),
-  CONSTRAINT `room_furniture_items_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`)
+  CONSTRAINT `room_furniture_items_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

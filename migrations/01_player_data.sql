@@ -14,7 +14,7 @@ CREATE TABLE `player_data` (
   `last_online` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `player_data_player_id_foreign` (`player_id`),
-  CONSTRAINT `player_data_player_id_foreign` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
+  CONSTRAINT `player_data_player_id_foreign` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`),
   KEY `player_data_home_room_id_foreign` (`home_room_id`),
-  CONSTRAINT `player_data_player_id_foreign` FOREIGN KEY (`home_room_id`) REFERENCES `rooms` (`id`)
+  CONSTRAINT `player_data_home_room_id_foreign` FOREIGN KEY (`home_room_id`) REFERENCES `rooms` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

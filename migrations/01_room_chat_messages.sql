@@ -11,5 +11,5 @@ CREATE TABLE `room_chat_messages` (
   KEY `room_chat_messages_room_id_foreign` (`room_id`),
   KEY `room_chat_messages_player_id_foreign` (`player_id`),
   CONSTRAINT `room_chat_messages_player_id_foreign` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`),
-  CONSTRAINT `room_chat_messages_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`)
+  CONSTRAINT `room_chat_messages_room_id_foreign` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

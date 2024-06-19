@@ -1,4 +1,4 @@
-INSERT INTO `catalog_pages` (`id`, `name`, `caption`, `layout`, `role_id`, `catalog_page_id`, `order_id`, `icon_id`, `enabled`, `visible`, `images_json`, `texts_json`) VALUES (1,'front_page','Front Page','frontpage',1,null,1,213,1,1,'[\"catalog_frontpage_headline_shop_EN\",\"\"]','[\"\",\"Redeem a voucher code here:\",\"\"]'),
+INSERT INTO `catalog_pages` (`id`, `name`, `caption`, `layout`, `role_id`, `catalog_page_id`, `order_id`, `icon_id`, `enabled`, `visible`, `images_json`, `texts_json`) VALUES (1,'front_page','Front Page','frontpage4',1,null,1,213,1,1,'[\"catalog_frontpage_headline_shop_EN\",\"\"]','[\"\",\"Redeem a voucher code here:\",\"\"]'),
 (2,'furni','Furni','default_3x3',1,null,2,263,1,1,'[\"catalog_header_roombuilder\",\"cr_infopic3\",\"\"]','[\"\",\"Furni Shop\",\"\"]'),
 (3,'clothing','Clothing','default_3x3',1,null,3,37,1,1,'[\"catalog_frontpage_headline_shop_EN\",\"\",\"\"]','[\"\",\"\",\"\"]'),
 (4,'pets','Pets','default_3x3',1,null,4,8,1,1,'[\"catalog_frontpage_headline_shop_EN\",\"\",\"\"]','[\"\",\"\",\"\"]'),

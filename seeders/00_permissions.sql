@@ -1,5 +1,5 @@
-INSERT INTO `permissions` (`id`, `name`) VALUES 
-('moderation_tools'),
+INSERT INTO `permissions` (`name`) VALUES 
+('moderator'),
 ('command_shutdown'),
 ('command_hotel_alert'),
 ('command_user_info'),

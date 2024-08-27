@@ -4,5 +4,6 @@ CREATE TABLE `server_room_constants` (
     `max_name_length` int(11) NOT NULL DEFAULT 60,
     `max_description_length` int(11) NOT NULL DEFAULT 250,
     `max_tag_length` int(11) NOT NULL DEFAULT 30,
+    `wired_max_furniture_selection` int(11) NOT NULL DEFAULT 5,
     `created_at` TIMESTAMP NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

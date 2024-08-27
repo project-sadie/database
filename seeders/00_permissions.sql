@@ -1,4 +1,4 @@
-INSERT INTO `permissions` (`name`) VALUES 
+INSERT INTO `permissions` (`name`) VALUES
 ('moderator'),
 ('command_shutdown'),
 ('command_hotel_alert'),

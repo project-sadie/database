@@ -7,5 +7,5 @@ CREATE TABLE `player_furniture_item_wired_data` (
     KEY `pfiwd_player_furniture_item_placement_data_id_foreign` (`player_furniture_item_placement_data_id`),
     CONSTRAINT `pfiwd_player_furniture_item_placement_data_id_foreign` FOREIGN KEY (
         `player_furniture_item_placement_data_id`
-    ) REFERENCES `player_furniture_item_placement_data` (`id`)
+    ) REFERENCES `player_furniture_item_placement_data` (`id`) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

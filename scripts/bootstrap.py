@@ -4,7 +4,7 @@ import os
 import glob
 
 if os.path.isfile(".env") == False:
-    print("Ensure you have a .env file in your scripts folder")
+    print("Missing .env file")
     raise SystemExit
 
 if os.path.exists("migrations") == False:

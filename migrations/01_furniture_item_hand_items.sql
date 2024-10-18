@@ -7,11 +7,11 @@ CREATE TABLE `furniture_item_hand_item` (
     KEY `furniture_item_hand_item_furniture_items_id_hand_items_id_index` (
         `furniture_items_id`, `hand_items_id`
     ),
-    CONSTRAINT `furniture_item_hand_item_furniture_items_id_foreign` 
+    CONSTRAINT `furniture_item_hand_item_furniture_items_id_foreign`
     FOREIGN KEY (
         `furniture_items_id`
     ) REFERENCES `furniture_items` (`id`),
-    CONSTRAINT `furniture_item_hand_item_hand_items_id_foreign` 
+    CONSTRAINT `furniture_item_hand_item_hand_items_id_foreign`
     FOREIGN KEY (
         `hand_items_id`
     ) REFERENCES `hand_items` (`id`)

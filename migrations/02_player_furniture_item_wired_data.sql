@@ -4,7 +4,7 @@ CREATE TABLE `player_furniture_item_wired_data` (
     `message` varchar(255) NULL,
     `delay` int(11) unsigned NOT NULL,
     PRIMARY KEY (`id`),
-    KEY `pfiwd_p_furniture_item_placement_data_id_foreign` 
+    KEY `pfiwd_p_furniture_item_placement_data_id_foreign`
     (`player_furniture_item_placement_data_id`),
     CONSTRAINT `pfiwd_p_furniture_item_placement_data_id_foreign` FOREIGN KEY (
         `player_furniture_item_placement_data_id`

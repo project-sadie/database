@@ -3,13 +3,13 @@ CREATE TABLE `catalog_item_furniture_item` (
     `catalog_items_id` bigint(20) unsigned NOT NULL,
     `furniture_items_id` bigint(20) unsigned NOT NULL,
     PRIMARY KEY (`id`),
-    KEY `catalog_item_furniture_item_catalog_items_id_foreign` (
+    KEY `catalog_item_furniture_item_c_items_id_foreign` (
         `catalog_items_id`
     ),
     KEY `catalog_item_furniture_item_furniture_items_id_foreign` (
         `furniture_items_id`
     ),
-    CONSTRAINT `catalog_item_furniture_item_catalog_items_id_foreign` FOREIGN KEY (
+    CONSTRAINT `catalog_item_furniture_item_c_items_id_foreign` FOREIGN KEY (
         `catalog_items_id`
     ) REFERENCES `catalog_items` (`id`),
     CONSTRAINT `catalog_item_furniture_item_furniture_items_id_foreign` FOREIGN KEY (

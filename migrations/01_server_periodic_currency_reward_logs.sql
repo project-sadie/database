@@ -5,8 +5,8 @@ CREATE TABLE `server_periodic_currency_reward_logs` (
     `amount` int(11) NOT NULL,
     `created_at` TIMESTAMP NOT NULL,
     PRIMARY KEY (`id`),
-    KEY `server_periodic_currency_reward_logs_player_id_foreign` (`player_id`),
-    CONSTRAINT `server_periodic_currency_reward_logs_player_id_foreign` FOREIGN KEY (
+    KEY `server_periodic_currency_reward_logs_p_id_foreign` (`player_id`),
+    CONSTRAINT `server_periodic_currency_reward_logs_p_id_foreign` FOREIGN KEY (
         `player_id`
     ) REFERENCES `players` (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

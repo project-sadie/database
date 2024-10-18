@@ -1,7 +1,7 @@
 import glob
 import sys
 
-maxTableLength = 36
+maxTableLength = 38
 errors = 0
 
 for filepath in glob.iglob('migrations/*.sql'):

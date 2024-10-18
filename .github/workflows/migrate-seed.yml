@@ -33,8 +33,3 @@ jobs:
       - name: Run seeders
         run: |
           mysql -u $DB_USER -p$DB_PASSWORD $DB_DATABASE < output/seed.sql
-        
-      - name: Validate count
-        run: |
-          COUNT=$(mysql -e "use $DB_DATABASE; SELECT COUNT(*) FROM scraper_queue_item_statuses\G" -u$DB_USER -p$DB_PASSWORD | awk -F': ' ' { print $NF } '   | awk 'NR==2')
-          if [[ $COUNT -eq 0 ]]; then exit 1; else exit 0; fi

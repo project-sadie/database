@@ -1,4 +1,4 @@
-CREATE TABLE `player_furniture_item_wired_data_items` (
+CREATE TABLE `player_furniture_item_wired_data` (
     `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
     `player_furniture_item_placement_data_id` bigint(20) unsigned NOT NULL,
     `player_furniture_item_wired_data_id` bigint(20) unsigned NOT NULL,

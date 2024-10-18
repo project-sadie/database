@@ -1,9 +1,9 @@
-name: sqlfluff-lint
+name: lint
 
 on: [push]
 
 jobs:
-  lint:
+  sqlfluff:
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v2"

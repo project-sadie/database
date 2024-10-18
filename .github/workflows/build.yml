@@ -1,4 +1,4 @@
-name: migrate-seed
+name: build
 
 on: [push]
 

@@ -1,0 +1,18 @@
+name: sqlfluff-lint
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-python@v2"
+        with:
+            python-version: "3.12"
+      - name: Install SQLFluff
+        run: "pip install sqlfluff==3.2.0"
+      - name: Lint migrations
+        run: "sqlfluff lint migrations"
+      - name: Lint seeders
+        run: "sqlfluff lint seeders"

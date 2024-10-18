@@ -1,0 +1,14 @@
+name: tests
+
+on: [push]
+
+jobs:
+  run-python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-python@v2"
+        with:
+            python-version: "3.12"
+      - name: check-table-name-lengths
+        run: "python tests/checkTableNameLengths.py"

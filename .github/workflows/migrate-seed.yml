@@ -1,0 +1,40 @@
+name: migrate-seed
+
+on: [push]
+
+jobs:
+  migrate-seed:
+    runs-on: ubuntu-latest
+
+    env:
+      DB_DATABASE: sadie
+      DB_USER: root
+      DB_PASSWORD: root
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Start MySQL
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -e "CREATE DATABASE IF NOT EXISTS $DB_DATABASE;" -u$DB_USER -p$DB_PASSWORD
+        
+      - name: Creating single output files
+        run: |
+          mkdir -p output
+          awk '{print}' ./migrations/*.sql > "output/migrate.sql"
+          awk '{print}' ./seeders/*.sql > "output/seed.sql"
+        
+      - name: Run migrations
+        run: |
+          mysql -u $DB_USER -p$DB_PASSWORD $DB_DATABASE < output/migrate.sql
+        
+      - name: Run seeders
+        run: |
+          mysql -u $DB_USER -p$DB_PASSWORD $DB_DATABASE < output/seed.sql
+        
+      - name: Validate count
+        run: |
+          COUNT=$(mysql -e "use $DB_DATABASE; SELECT COUNT(*) FROM scraper_queue_item_statuses\G" -u$DB_USER -p$DB_PASSWORD | awk -F': ' ' { print $NF } '   | awk 'NR==2')
+          if [[ $COUNT -eq 0 ]]; then exit 1; else exit 0; fi

@@ -6,13 +6,13 @@ CREATE TABLE `catalog_item_furniture_item` (
     KEY `catalog_item_furniture_item_c_items_id_foreign` (
         `catalog_items_id`
     ),
-    KEY `catalog_item_furniture_item_furniture_items_id_foreign` (
+    KEY `catalog_item_f_item_furniture_items_id_foreign` (
         `furniture_items_id`
     ),
     CONSTRAINT `catalog_item_furniture_item_c_items_id_foreign` FOREIGN KEY (
         `catalog_items_id`
     ) REFERENCES `catalog_items` (`id`),
-    CONSTRAINT `catalog_item_furniture_item_furniture_items_id_foreign` FOREIGN KEY (
+    CONSTRAINT `catalog_item_f_item_furniture_items_id_foreign` FOREIGN KEY (
         `furniture_items_id`
     ) REFERENCES `furniture_items` (`id`)
 ) ENGINE

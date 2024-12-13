@@ -9,9 +9,9 @@ CREATE TABLE `player_bans` (
     KEY `player_bans_owner_id_foreign` (`owner_id`),
     KEY `player_bans_player_id_foreign` (`player_id`),
     CONSTRAINT `player_bans_owner_id_foreign` FOREIGN KEY (
-        `player_id`
+        `owner_id`
     ) REFERENCES `players` (`id`),
     CONSTRAINT `player_bans_player_id_foreign` FOREIGN KEY (
-        `room_id`
+        `player_id`
     ) REFERENCES `players` (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

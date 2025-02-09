@@ -1,6 +1,6 @@
 CREATE TABLE `banned_ip_addresses` (
     `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-    `owner_id` bigint(20) unsigned NOT NULL,
+    `owner_id` bigint(20) unsigned NULL,
     `reason` varchar(255) NOT NULL,
     `ip_address` varchar(255) NOT NULL,
     `created_at` TIMESTAMP NOT NULL,

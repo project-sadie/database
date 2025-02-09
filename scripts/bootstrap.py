@@ -19,6 +19,7 @@ def get_connection (database = ''):
         user = os.environ.get("DB_USER"),
         password = os.environ.get("DB_PASS"),
         database = database,
+        port = int(os.environ.get("DB_PORT")),
         cursorclass=pymysql.cursors.DictCursor)
 
 def reset_database():

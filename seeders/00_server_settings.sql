@@ -1,6 +1,6 @@
 INSERT INTO `server_settings` (
-    `player_welcome_message`, 
-    `fair_currency_rewards`, 
+    `player_welcome_message`,
+    `fair_currency_rewards`,
     `created_at`
 ) VALUES
 (

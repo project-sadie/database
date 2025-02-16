@@ -17,5 +17,5 @@ CREATE TABLE `player_furniture_item_wired_items` (
     CONSTRAINT `pfiwdi_player_furniture_item_wired_data_id_foreign`
     FOREIGN KEY (
         `player_furniture_item_wired_data_id`
-    ) REFERENCES `player_furniture_item_wired_data` (`id`)
+    ) REFERENCES `player_furniture_item_wired_data` (`id`) ON DELETE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

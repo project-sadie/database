@@ -1,6 +1,6 @@
 CREATE TABLE `player_ignores` (
     `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-    `origin_player_id` bigint(20) unsigned NOT NULL,
+    `player_id` bigint(20) unsigned NOT NULL,
     `target_player_id` bigint(20) unsigned NOT NULL,
     PRIMARY KEY (`id`),
     KEY `player_ignores_origin_player_id_foreign` (`origin_player_id`),

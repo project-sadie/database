@@ -13,7 +13,7 @@ CREATE TABLE `player_furniture_item_wired_items` (
     CONSTRAINT `pfiwdi_p_furniture_item_placement_data_id_foreign`
     FOREIGN KEY (
         `player_furniture_item_placement_data_id`
-    ) REFERENCES `player_furniture_item_placement_data` (`id`),
+    ) REFERENCES `player_furniture_item_placement_data` (`id`) ON DELETE CASCADE,
     CONSTRAINT `pfiwdi_player_furniture_item_wired_data_id_foreign`
     FOREIGN KEY (
         `player_furniture_item_wired_data_id`

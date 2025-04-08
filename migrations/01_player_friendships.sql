@@ -2,7 +2,7 @@ CREATE TABLE `player_friendships` (
     `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
     `origin_player_id` bigint(20) unsigned NOT NULL,
     `target_player_id` bigint(20) unsigned NOT NULL,
-    `status` enum('1', '2', '3') NOT NULL DEFAULT '1',
+    `status` tinyint(1) NOT NULL DEFAULT 1,
     `created_at` TIMESTAMP NOT NULL,
     PRIMARY KEY (`id`),
     KEY `player_friendships_origin_player_id_foreign` (`origin_player_id`),
